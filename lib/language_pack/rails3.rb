@@ -56,9 +56,6 @@ private
           if $?.success?
             log "assets_precompile", :status => "success"
             puts "Asset precompilation completed (#{"%.2f" % time}s)"
-
-            cache_clear "public/assets"
-            puts "Asset cache cleared -jake"
           else
             log "assets_precompile", :status => "failure"
             puts "Precompiling assets failed, enabling runtime asset compilation"
@@ -66,6 +63,9 @@ private
             puts "Please see this article for troubleshooting help:"
             puts "http://devcenter.heroku.com/articles/rails31_heroku_cedar#troubleshooting"
           end
+
+          cache_clear "public/assets"
+          puts "Asset cache cleared -jake"
         end
       end
     end
