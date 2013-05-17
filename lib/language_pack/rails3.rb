@@ -58,6 +58,7 @@ private
             puts "Asset precompilation completed (#{"%.2f" % time}s)"
 
             cache_clear "public/assets"
+            puts "Asset cache cleared -jake"
           else
             log "assets_precompile", :status => "failure"
             puts "Precompiling assets failed, enabling runtime asset compilation"
